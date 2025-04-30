@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Dashboard</h1>
+    <nav id="navbar">
+      <a href="home.html">Home</a>
+      <a href="login.html">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <div id="table-container" style="margin-top: 30px;"></div>
+  </main>
+
+  <script>
+    const role = localStorage.getItem('role');
+    const navbar = document.getElementById('navbar');
+    const tableContainer = document.getElementById('table-container');
+
+    if (role === 'admin') {
+      const adminMenu = `
+        <div class="dropdown">
+          <a href="#">Menu Admin ▾</a>
+          <div class="dropdown-content">
+            <a href="data-siswa.html">Kelola Data Siswa</a>
+<a href="data-guru.html">Kelola Data Guru</a>
+<a href="data-jurusan.html">Kelola Data Jurusan</a>
+<a href="data-jadwal.html">Kelola Jadwal Pelajaran</a>
+          </div>
+        </div>
+      `;
+      navbar.insertAdjacentHTML('beforeend', adminMenu);
+
+      tableContainer.innerHTML = `
+        <h3>Halo selamat datang anda sebagai admin!!</h3>
+
+        
+      `;
+    } else if (role === 'guru') {
+      const guruMenu = `
+        <div class="dropdown">
+          <a href="#">Menu Guru ▾</a>
+          <div class="dropdown-content">
+            <a href="input-nilai.html">Input Nilai</a>
+            <a href="lihat-data-siswa.html">Lihat Data Siswa</a>
+            <a href="lihat-jadwal.html">Lihat Jadwal</a>
+          </div>
+        </div>
+      `;
+      navbar.insertAdjacentHTML('beforeend', guruMenu);
+    } else if (role === 'siswa') {
+      const siswaMenu = `
+        <div class="dropdown">
+          <a href="#">Menu Siswa ▾</a>
+          <div class="dropdown-content">
+            <a href="lihat-nilai.html">Lihat Nilai</a>
+            <a href="lihat-jadwal1.html">Lihat Jadwal</a>
+            <a href="profile.html">Profil Pribadi</a>
+            <a href="pengumuman.html">Pengumuman</a>
+          </div>
+        </div>
+      `;
+      navbar.insertAdjacentHTML('beforeend', siswaMenu);
+    }
+  </script>
+</body>
+
+</html>

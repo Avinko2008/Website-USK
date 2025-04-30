@@ -1,0 +1,194 @@
+/* Reset dasar */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+}
+
+/* Header dan Navigasi */
+header {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* Login Page */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+}
+
+.login-container {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #007bff;
+}
+
+.login-container input,
+.login-container select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s;
+}
+
+.login-container input:focus,
+.login-container select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.login-container button:hover {
+  background: #0056b3;
+}
+
+/* Main content */
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* Role Dashboard */
+.role-dashboard ul {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.role-dashboard ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.role-dashboard ul li:last-child {
+  border-bottom: none;
+}
+
+/* Tabel Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background: rgb(121, 120, 120);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+table thead {
+  background: #007bff;
+  color: white;
+}
+
+table th, table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Animasi sederhana */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dropdown di Navbar */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown > a::after {
+  content: " ▾";
+  font-size: 0.8em;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  top: 30px;
+  right: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

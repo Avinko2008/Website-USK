@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <img src="logo-yht-transparant-909x1024 (1).png" style="height: 100px; margin-left: 38%;">
+    <h2>Login</h2>
+    <form onsubmit="handleLogin(event)">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required>
+
+      <label for="role">Login Sebagai:</label>
+      <select id="role" required>
+        <option value="admin">Admin</option>
+        <option value="guru">Guru</option>
+        <option value="siswa">Siswa</option>
+      </select>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const role = document.getElementById("role").value;
+
+      // Validasi password sederhana
+      if (password.trim() === "") {
+        alert("12345");
+        return;
+      }
+
+      // Simpan role ke localStorage
+      localStorage.setItem("role", role);
+      localStorage.setItem("username", username);
+
+      // Redirect ke dashboard
+      window.location.href = "dashboard.html";
+    }
+  </script>
+</body>
+</html>
